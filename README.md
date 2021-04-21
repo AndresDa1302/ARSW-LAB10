@@ -280,12 +280,26 @@ http://52.155.223.248/fibonacci/1
 ``` 
 
 - Estos fueron los siguientes resultados al momento de hacer una petición al balanceador (se puede comprovar que la dirección anteriormente descrita es la misma)
-- 
+
 ![](images/part2/httpgetBalancer.png)  
 ![](images/part2/httpgetBalancerFibo.png) 
 
 
 2. Realice las pruebas de carga con `newman` que se realizaron en la parte 1 y haga un informe comparativo donde contraste: tiempos de respuesta, cantidad de peticiones respondidas con éxito, costos de las 2 infraestrucruras, es decir, la que desarrollamos con balanceo de carga horizontal y la que se hizo con una maquina virtual escalada.
+
+-Realizando las peticiones simultaneamente como lo indican
+![](images/part2/testNewman.png.png)  
+
+-Tenemos los siguentes resultados 
+
+![](images/part2/resultTest1.png)   
+![](images/part2/resultTest2png)   
+
+##### Comparación peticiones fallidas
+
+Comparandolo con el punto anterior el balanceo de carga horizontal falló masveces a comparación de la maquina virtualizada
+
+
 
 3. Agregue una 4 maquina virtual y realice las pruebas de newman, pero esta vez no lance 2 peticiones en paralelo, sino que incrementelo a 4. Haga un informe donde presente el comportamiento de la CPU de las 4 VM y explique porque la tasa de éxito de las peticiones aumento con este estilo de escalabilidad.
 
