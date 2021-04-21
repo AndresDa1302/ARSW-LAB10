@@ -86,10 +86,15 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 11. Una vez el cambio se vea reflejado, repita el paso 7, 8 y 9.
 
 Tiempos de prueba con valores altos 
+
 ![](https://github.com/AndresDa1302/ARSW-LAB10/blob/master/images/part1/enpoint%20b2ms.PNG)
+
 Uso medio del CPU 
+
 ![](https://github.com/AndresDa1302/ARSW-LAB10/blob/master/images/part1/cpu%20vetical%20op.PNG)
+
 Datos de pruebas postman 
+
 ![](https://github.com/AndresDa1302/ARSW-LAB10/blob/master/images/part1/value%201000000%20escalado.PNG)
 
 
@@ -123,25 +128,30 @@ Datos de pruebas postman
  Se menciono lo mal construirdo que esta FibonacciApp, entonces revisando el js vemos que debe realizar muchas recursiones sin un cache que guarde datos anteriores. Se explica mejor con un ejemplo, si buscamos el 10000 entonces las hará y tardará más, por lo que si seguidamente buscamos 11000, tenemos un cache pues seguirá desde 10000 y solo tendrá que hacer 1000 recursiones ahorrando tiempo de ejecución 
  
  Sin Escalamiento
+ 
  ![](https://github.com/AndresDa1302/ARSW-LAB10/blob/master/images/part1/endpoints%20b1ls.PNG)
  
  Con Escalamiento
+ 
  ![](https://github.com/AndresDa1302/ARSW-LAB10/blob/master/images/part1/enpoint%20b2ms.PNG)
  
 
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
 
  CPU ANTES
+ 
  ![](https://github.com/AndresDa1302/ARSW-LAB10/blob/master/images/part1/cpu%20vertical.PNG)
  
  CPU DESPUES 
+ 
  ![](https://github.com/AndresDa1302/ARSW-LAB10/blob/master/images/part1/cpu%20vetical%20op.PNG)
 
 Se puede ver como antes del escalamiento consume más del 60% de la CPU en picos y despues ya este no supera el 20% de consumo pues el tamaño se ha mejorado considerablemente, pasando de 0.5 de RAM a 8 y de vCPU de tener 1 a 2. Por lo que la estrategia de escalamiento se resume en esto claramente
 
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
-   Sin escalamiento
+ 
+   	Sin escalamiento
    
 	![](https://github.com/AndresDa1302/ARSW-LAB10/blob/master/images/part1/value%20100000.PNG)
    
@@ -151,7 +161,8 @@ Se puede ver como antes del escalamiento consume más del 60% de la CPU en picos
    
    
     * Si hubo fallos documentelos y explique.
-    Al momento de realizar las pruebas para los postman sin escalar los tiempos de iteracion por pruebas fueron tan altos que no terminaron al usar el valor 1000000 a la tercera iteracion dejo de funcionar correctamente esto se debe a que excedio la memoria disponible y no podia seguir iterando 
+    
+    -Al momento de realizar las pruebas para los postman sin escalar los tiempos de iteracion por pruebas fueron tan altos que no terminaron al usar el valor 1000000 a la tercera iteracion dejo de funcionar correctamente esto se debe a que excedio la memoria disponible y no podia seguir iterando 
     
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
       `B1ls`
