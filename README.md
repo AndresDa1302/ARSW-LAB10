@@ -206,6 +206,12 @@ Antes de continuar puede eliminar el grupo de recursos anterior para evitar gast
 
 ![](images/part2/part2-lb-create.png)
 
+- Este fue el resultado cuando se creo el balanceador de carga  y ademas el grupo también. Se puede ver la dirección ip del balanceador que mas adelanta se usara para realizar las peticiones  y ver su correcto funcionamiento.
+
+![](images/part2/createBalancerandGroup.png) 
+![](images/part2/IPBalancer.png) 
+
+
 2. A continuación cree un *Backend Pool*, guiese con la siguiente imágen.
 
 ![](images/part2/part2-lb-bp-create.png)
