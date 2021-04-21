@@ -281,23 +281,37 @@ http://52.155.223.248/fibonacci/1
 
 - Estos fueron los siguientes resultados al momento de hacer una petición al balanceador (se puede comprovar que la dirección anteriormente descrita es la misma)
 
-![](images/part2/httpgetBalancer.png)  
+![](images/part2/httpgetBalancer.png)   
+
 ![](images/part2/httpgetBalancerFibo.png) 
 
 
 2. Realice las pruebas de carga con `newman` que se realizaron en la parte 1 y haga un informe comparativo donde contraste: tiempos de respuesta, cantidad de peticiones respondidas con éxito, costos de las 2 infraestrucruras, es decir, la que desarrollamos con balanceo de carga horizontal y la que se hizo con una maquina virtual escalada.
 
 -Realizando las peticiones simultaneamente como lo indican
+
 ![](images/part2/testNewman.png.png)  
 
 -Tenemos los siguentes resultados 
 
 ![](images/part2/resultTest1.png)   
-![](images/part2/resultTest2png)   
+
+![](images/part2/resultTest2.png)   
 
 ##### Comparación peticiones fallidas
 
-Comparandolo con el punto anterior el balanceo de carga horizontal falló masveces a comparación de la maquina virtualizada
+Comparandolo con el punto anterior el balanceo de carga horizontal falló mas veces a comparación de la maquina virtualizada teniendo un resultado 3 a 1. 
+
+##### Comparación tiempo de ejecución 
+
+Comparando el tiempo de respuesta de los dos metodos de escalamiento se evidencia que el balanceo de carga obtiene respuesta mucho mas rapida que la otra esto por que cada petición la realiza a una maquina virtual diferente, a diferencia del otro metodo que tiene que calcular todas. (En el metodo vertical se redujo el valor a calcular ya que no se obtenia respuesta). 
+
+##### Comparación costos
+
+Tenemos que por cada maquina virtual ejecutandose hay un costo de  0.027$/hora, ademas por un balanceador de carga 0.022$/hora, ademas por el aumento de memoria para el metodo vertical hay un costo adicional.
+
+Teniendo en cuenta esto es mucho mas costoso realizar el escalamiento horizontal ya que se tienen 3 maquinas y un balanceador de carga.
+
 
 
 
@@ -308,7 +322,9 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
-```
+``` 
+
+
 
 **Preguntas**
 
