@@ -266,6 +266,10 @@ forever start FibonacciApp.js
 
 Realice este proceso para las 3 VMs, por ahora lo haremos a mano una por una, sin embargo es importante que usted sepa que existen herramientas para aumatizar este proceso, entre ellas encontramos Azure Resource Manager, OsDisk Images, Terraform con Vagrant y Paker, Puppet, Ansible entre otras.
 
+Despues de realizar todo el proceso como se indica en el laboratorio este fue el resultado al crear las maquinas virtuales (las llaves se agregarán en el repositorio como prueba pero las maquinas estarán apagadas) 
+
+![](images/part2/VMS.png) 
+
 #### Probar el resultado final de nuestra infraestructura
 
 1. Porsupuesto el endpoint de acceso a nuestro sistema será la IP pública del balanceador de carga, primero verifiquemos que los servicios básicos están funcionando, consuma los siguientes recursos:
@@ -273,7 +277,13 @@ Realice este proceso para las 3 VMs, por ahora lo haremos a mano una por una, si
 ```
 http://52.155.223.248/
 http://52.155.223.248/fibonacci/1
-```
+``` 
+
+- Estos fueron los siguientes resultados al momento de hacer una petición al balanceador (se puede comprovar que la dirección anteriormente descrita es la misma)
+- 
+![](images/part2/httpgetBalancer.png)  
+![](images/part2/httpgetBalancerFibo.png) 
+
 
 2. Realice las pruebas de carga con `newman` que se realizaron en la parte 1 y haga un informe comparativo donde contraste: tiempos de respuesta, cantidad de peticiones respondidas con éxito, costos de las 2 infraestrucruras, es decir, la que desarrollamos con balanceo de carga horizontal y la que se hizo con una maquina virtual escalada.
 
