@@ -105,7 +105,9 @@ Datos de pruebas postman
 
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
 
-Cuenta con 8 recursos que son los siguientes: 
+Cuenta con 12 recursos que son los siguientes: 
+
+![](https://github.com/AndresDa1302/ARSW-LAB10/blob/master/images/part1/recursos.PNG)
 
 2. ¿Brevemente describa para qué sirve cada recurso? 
 
