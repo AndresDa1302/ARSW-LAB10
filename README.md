@@ -104,6 +104,9 @@ Datos de pruebas postman
 **Preguntas**
 
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
+
+Cuenta con 8 recursos que son los siguientes: 
+
 2. ¿Brevemente describa para qué sirve cada recurso? 
 
 - La maquina virtual es lo que Azure ofrece para alojar la aplicación sin hardware fisico.
@@ -188,6 +191,8 @@ Se puede ver como antes del escalamiento consume más del 60% de la CPU en picos
 - Los tiempos de respuesta  tienen una diferencia  elevada  por lo que  podemos decir que SI hubo mejora en el consupo de la CPU y tiempos de respuesta.
 
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
+
+-Al aumentar la cantidad de ejecuciones paralelas observamos que el comportamiento del procentaje es mayor debido a quese calculan paralelamete todas las recurrencias permitiendo agilidad y eficiencia.
 
 ### Parte 2 - Escalabilidad horizontal
 
