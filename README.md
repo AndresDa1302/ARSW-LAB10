@@ -362,19 +362,19 @@ A diferencia de las anteriores pruebas la tasa de éxito dismimuyo, (no se sabe 
 		Esta es bastante importante por que uno define como se van a distribuir las maquinas virtuales por ejemplo la configuración Ip del cliente que con lleva a que solo una maquina estará operando, al momento de hacer una petición a un balanceador lo cual pueden surgir gastos innecesarios por las otras maquinas. 
 		
 * ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*? 
-	-Es el bloque de creación fundamental de una red privada en Azure. VNet permite muchos tipos de recursos de Azure, como Azure Virtual Machines (máquinas 		virtuales), para comunicarse de forma segura entre usuarios, con Internet y con las redes locales. 
+	- Es el bloque de creación fundamental de una red privada en Azure. VNet permite muchos tipos de recursos de Azure, como Azure Virtual Machines (máquinas 		virtuales), para comunicarse de forma segura entre usuarios, con Internet y con las redes locales. 
 	
-	-Es un rango de direcciones lógicas, que se utiliza normalmente cuando se tienen redes demasiado grandes, estos son divididas en redes más pequeñas; estas se 		conocen como subnets
+	- Es un rango de direcciones lógicas, que se utiliza normalmente cuando se tienen redes demasiado grandes, estos son divididas en redes más pequeñas; estas se 		conocen como subnets
 	
-	-Los address space son aquellas direcciones de red asignables dentro de una Vnt y los address range son las redes asignables dentro de una subnet.
+	- Los address space son aquellas direcciones de red asignables dentro de una Vnt y los address range son las redes asignables dentro de una subnet.
 
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
 
-	-Una zona de disponibilidad es una oferta de alta disponibilidad que protege sus aplicaciones y datos de los fallos del centro de datos. Las zonas de disponibilidad son ubicaciones físicas únicas dentro de una región de Azure. Cuando una IP es zone-redundant es aquella que replica las peticiones y los datos por medio de las Availability Zone.
+	- Una zona de disponibilidad es una oferta de alta disponibilidad que protege sus aplicaciones y datos de los fallos del centro de datos. Las zonas de disponibilidad son ubicaciones físicas únicas dentro de una región de Azure. Cuando una IP es zone-redundant es aquella que replica las peticiones y los datos por medio de las Availability Zone.
 
 * ¿Cuál es el propósito del *Network Security Group*?
 
-	-Puede utilizar un grupo de seguridad de red de Azure para filtrar el tráfico de red hacia y desde los recursos de Azure en una red virtual de Azure. Un 	grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red entrante hacia, o el tráfico de red saliente desde, varios tipos de recursos de Azure. Para cada regla, puede especificar el origen y el destino, el puerto y el protocolo.
+	- Puede utilizar un grupo de seguridad de red de Azure para filtrar el tráfico de red hacia y desde los recursos de Azure en una red virtual de Azure. Un 	grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red entrante hacia, o el tráfico de red saliente desde, varios tipos de recursos de Azure. Para cada regla, puede especificar el origen y el destino, el puerto y el protocolo.
 
 * Informe de newman 1 (Punto 2)
 
