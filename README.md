@@ -377,7 +377,7 @@ A diferencia de las anteriores pruebas la tasa de éxito dismimuyo, (no se sabe 
 	- Puede utilizar un grupo de seguridad de red de Azure para filtrar el tráfico de red hacia y desde los recursos de Azure en una red virtual de Azure. Un 	grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red entrante hacia, o el tráfico de red saliente desde, varios tipos de recursos de Azure. Para cada regla, puede especificar el origen y el destino, el puerto y el protocolo.
 
 * Informe de newman 1 (Punto 2)
-
+	- Realizado punto anterior
 * Presente el Diagrama de Despliegue de la solución.
 
 
