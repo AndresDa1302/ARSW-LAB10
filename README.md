@@ -325,14 +325,44 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 ``` 
 
 
+A diferencia de las anteriores pruebas la tasa de éxito dismimuyo, (no se sabe en que zona poner la maquina 4) y la siguiente imagen muestra el uso de la CPU para cada maquina al momento de hacer las peticiones GET.
+![](images/part2/result4vms.png)  
+
 
 **Preguntas**
 
 * ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?, ¿Qué es SKU, qué tipos hay y en qué se diferencian?, ¿Por qué el balanceador de carga necesita una IP pública?
-* ¿Cuál es el propósito del *Backend Pool*?
-* ¿Cuál es el propósito del *Health Probe*?
-* ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
-* ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
+	- La siguiente imagen tomada de Microsoft permite ver los tipos de balanceadores que existen y estos se diferencian por los protocolos de red que usan
+	
+	![](images/part2/typeBalancers.png)   
+	
+	- Azure Load Balancer estará disponible en dos SKU (Unidad de mantenimiento de stocks): Basic y Standard. De forma predeterminada, la SKU estándar se usa al 		crear un clúster de Azure Kubernetes Service(AKS). Con un equilibrador de carga SKU estándar, ofrece más características y funcionalidades, como un tamaño de 		grupo back-end más grande y zonas de disponibilidad. Es importante que comprenda las diferencias entre los equilibradores de carga estándar y básico antes de 		elegir qué utilizar. Después de crear un clúster de AKS, no puede cambiar la SKU del equilibrador de carga para ese clúster. Las API de ambas SKU son similares 	y se invocan a través de la especificación de una SKU.
+	
+	- Necesitan IP ya que a este se realizaran las peticiones http e internamente este balanceador realizara las peticiones a las maquinas virtuales y poder 		devolver el valor.
+	
+* ¿Cuál es el propósito del *Backend Pool*? 
+	
+	- El Backend Pool permite agrupar las maquinas que dispondra el balanceador de carga para poder usarlas. 
+	
+	![](images/part2/backendPool.png) 
+	
+
+* ¿Cuál es el propósito del *Health Probe*? 
+
+	- Al usar reglas de equilibrio de carga con Azure Load Balancer, debe especificar un sondeo de estado para permitir que Load Balancer detecte el estado del 		punto de conexión de back-end. La configuración del sondeo de estado y las respuestas de sondeo determinan qué instancias del grupo de back-end recibirán nuevos 	flujos. Puede usar los sondeos de estado para detectar el error de una aplicación en un punto de conexión de back-end. 
+	
+* ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?. 
+
+	- Una regla de equilibrio de carga distribuye el tráfico entrante que se envía a una combinación de dirección IP y puerto seleccionada entre un grupo de 		instancias del grupo de back-end. Solo recibirán nuevo tráfico aquellas instancias de back-end cuyo estado sea correcto según el sondeo de estado. 
+	
+	- Están disponibles las siguientes opciones: 
+	 	*Ninguno (basado en hash): especifica que cualquier máquina virtual puede controlar las solicitudes sucesivas del mismo cliente.*	
+		*IP del cliente (afinidad ip de origen de dos tuplas): especifica que las solicitudes sucesivas de la misma dirección IP de cliente serán controladas 			por la misma máquina virtual.*
+		*IP y protocolo de cliente (afinidad ip de origen de tres tuplas): especifica que las solicitudes sucesivas de la misma dirección IP de cliente y 			combinación de protocolos serán controladas por la misma máquina virtual.* 
+		Esta es bastante importante por que uno define como se van a distribuir las maquinas virtuales por ejemplo la configuración Ip del cliente que con lleva a que solo una maquina estará operando, al momento de hacer una petición a un balanceador lo cual pueden surgir gastos innecesarios por las otras maquinas. 
+		
+* ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*? 
+
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
 * ¿Cuál es el propósito del *Network Security Group*?
 * Informe de newman 1 (Punto 2)
